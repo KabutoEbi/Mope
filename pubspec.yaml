@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   ffi: ^2.2.0
+  shared_preferences: ^2.1.5
+  crypto: ^3.0.2
 
 dev_dependencies:
   flutter_test:
