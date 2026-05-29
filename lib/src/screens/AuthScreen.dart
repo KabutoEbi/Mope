@@ -4,7 +4,7 @@ import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'ChatScreen.dart';
+import 'ChatHomeScreen.dart';
 import 'SetupScreen.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -92,7 +92,7 @@ class _AuthScreenState extends State<AuthScreen> {
 			_passwordController.clear();
 			if (!mounted) return;
 			Navigator.of(context).pushReplacement(
-				MaterialPageRoute(builder: (context) => const ChatScreen()),
+				MaterialPageRoute(builder: (context) => const ChatHomeScreen()),
 			);
 			return;
 		}

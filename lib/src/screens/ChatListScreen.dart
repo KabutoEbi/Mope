@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'ConversationScreen.dart';
+import 'ChatScreen.dart';
 
-class ConversationsScreen extends StatelessWidget {
-  const ConversationsScreen({super.key});
+class ChatListScreen extends StatelessWidget {
+  const ChatListScreen({super.key});
 
   // Dummy data for UI — only name and unread count are relevant for the list
   List<Map<String, String>> get _conversations => const [
@@ -31,7 +31,7 @@ class ConversationsScreen extends StatelessWidget {
               : const SizedBox.shrink(),
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => ConversationScreen(conversationId: convo['id']!, displayName: convo['name']!),
+              builder: (_) => ChatScreen(conversationId: convo['id']!, displayName: convo['name']!),
             ));
           },
         );

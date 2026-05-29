@@ -22,6 +22,7 @@ class Mope extends StatelessWidget {
           surface: Color(0xFF161B26),
         ),
       ),
+      // Development helper: set `forceShowSetup` true to always show setup on startup.
       home: FutureBuilder<bool>(
         future: _isSetup(),
         builder: (context, snapshot) {
@@ -29,7 +30,8 @@ class Mope extends StatelessWidget {
             return const Scaffold(body: Center(child: CircularProgressIndicator()));
           }
           final isSetup = snapshot.data ?? false;
-          return isSetup ? const AuthScreen() : const SetupScreen();
+          const bool forceShowSetup = true; // <-- set to false to restore normal behavior
+          return (!forceShowSetup && isSetup) ? const AuthScreen() : const SetupScreen();
         },
       ),
     );
